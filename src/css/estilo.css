@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #679c9e;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: 0.2s linear;
+}
+
+body {
+  background: linear-gradient(to bottom, #e0f7f9, #ffffff);
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #679c9e; /* Verde acinzentado */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: fixed;
+  z-index: 1000;
+}
+
+/* Remove transparência dos elementos internos */
+.logo1,
+.lupa,
+header nav ul,
+header nav ul li,
+header nav ul li a {
+  background: none;
+}
+
+.logo1 {
+  width: 120px;
+  background: transparent;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  background: transparent;
+}
+
+header nav ul li a {
+  color: #fd1616;
+  font-weight: 500;
+  font-size: 1.2rem;
+  background: transparent;
+}
+
+header nav ul li a:hover {
+  color: #fd1616;
+  font-size: 1.4rem;
+}
+
+.lupa {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.lupa:hover {
+  transform: scale(1.2);
+}
+
+/* SLIDES */
+#fundo1 {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.indicadores {
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.ponto {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ponto.ativo {
+  background-color: #333;
+}
+
+.trocar {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.seta2 {
+  width: 40px;
+  background-color: #cec5c5;
+  border-radius: 50%;
+  border: none;
+}
+
+.tema {
+  font-size: 2.2rem;
+  font-family: "IBM Plex Serif", serif;
+  color: #2c3e50;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.su, .int, .seg {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+  background: transparent;
+  font-family: "IBM Plex Serif", serif;
+}
+
+/* IMAGENS ABA */
+.aba {
+  background-color: #f0f0f0;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.aba img {
+  height: auto;
+  width: 150px;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-principal {
+  background: #757272;
+  color: #3e6d6e;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.conteudo-principal h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: transparent;
+}
+
+.conteudo-principal p {
+  font-size: 1.2rem;
+  background: transparent;
+  margin-bottom: 1rem;
+}
+
+.enchentes, .p1, .p2, .grafico {
+  background: transparent;
+}
+
+/* FOCOS */
+.focos {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #435257;
+}
+
+.focos h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.focos-lista {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.foco-item {
+  max-width: 200px;
+  text-align: center;
+}
+
+.foco-item img {
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid #679c9e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.foco-item h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* ATUAÇÃO */
+.atuacao {
+  padding: 4rem 2rem;
+  background-color: #9db6c7;
+  text-align: center;
+}
+
+.atuacao h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.atuacao-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.atuacao-conteudo .texto {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 300px;
+}
+
+.atuacao-conteudo img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo1 {
+    width: 100px;
+  }
+
+  .aba {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .focos-lista, .atuacao-conteudo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .conteudo-principal {
+    align-items: center;
+    text-align: center;
+  }
+
+  .grafico {
+    width: 100%;
+    text-align: center;
+  }
+
+  .aba img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tema {
+    font-size: 1.6rem;
+  }
+
+  .conteudo-principal h1 {
+    font-size: 1.4rem;
+  }
+
+  .conteudo-principal p {
+    font-size: 1rem;
+  }
+
+  header nav ul li a {
+    font-size: 1rem;
+  }
+
+  .foco-item h3 {
+    font-size: 1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  background: transparent;
+}
+
+li {
+  background: transparent;
+}
